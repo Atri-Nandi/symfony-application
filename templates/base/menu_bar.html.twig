@@ -1,0 +1,145 @@
+{% macro writeLeftBar(showUser) %}
+    {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+
+            <!-- Menu -->
+
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                  <a href="{{ path('dashboard') }}" class="app-brand-link">
+                    <span class="app-brand-logo demo">
+                        <img src="{{ asset('img/logo.jpg')}}" width="30px" height="40px"/>
+                    </span>
+                    <span class="app-brand-text demo menu-text fw-bolder ms-2">{{ 'home.page.title'|trans|raw }}</span>
+                  </a>
+      
+                  <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                    <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                  </a>
+                </div>
+      
+                <div class="menu-inner-shadow"></div>
+      
+                <ul class="menu-inner py-1">
+                  <!-- Dashboard -->
+                  {% set activeClass = '' %}
+                  {% if currentPath == '/dashboard' %}
+                    {% set activeClass = 'active' %}
+                  {% endif %}
+
+                  <li class="menu-item {{ activeClass }}">
+                    <a href="{{ path('dashboard') }}" class="menu-link">
+                      <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                      <div data-i18n="Analytics">{{ 'menu_bar.list.home'|trans }}</div>
+                    </a>
+                  </li>
+
+                  <!-- Users -->
+                  {% set activeClass = '' %}
+                  {% if currentPath == '/user-list' %}
+                    {% set activeClass = 'active' %}
+                  {% endif %}
+
+                  {% if showUser %}
+                  <li class="menu-item {{ activeClass }}">
+                    <a href="{{ path('user-list') }}" class="menu-link">
+                      <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                      <div data-i18n="Analytics">{{ 'menu_bar.list.user'|trans }}</div>
+                    </a>
+                  </li>   
+                  {% endif %}   
+                  
+                  <!-- Products -->
+                  {% set activeClass = '' %}
+                  {% if currentPath == '/product-list' %}
+                    {% set activeClass = 'active' %}
+                  {% endif %}
+
+                  <li class="menu-item {{ activeClass }}">
+                    <a href="{{ path('product-list') }}" class="menu-link">
+                      <i class="menu-icon tf-icons bx bx-box"></i>
+                      <div data-i18n="Analytics">{{ 'menu_bar.list.product'|trans }}</div>
+                    </a>
+                  </li>      
+                </ul>
+              </aside>
+          <!-- / Menu -->
+{% endmacro %}
+
+{% macro writeTopBar(user) %}
+
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <h5 class="card-title text-primary mt-3">Welome {{ user.fullName }} 🎉</h5>
+                </div>
+              </div>
+              <!-- /Search -->
+
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="{{ asset('img/avatars/user-icon.jpg') }}" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="{{ asset('img/avatars/user-icon.jpg') }}" alt class="w-px-40 h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">{{ user.fullName }}</span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{ path('user', {'id': app.session.get('user-id')}) }}">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                   
+                   
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{ path('logout') }}">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+    
+{% endmacro %}

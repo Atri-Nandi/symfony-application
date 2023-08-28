@@ -1,0 +1,84 @@
+home:
+  page:
+    title: 'Symfony'
+    sub_title: 'Welcome to Symfony Project! '
+    introduction: 'This is the symfony project. Symfony is a set of PHP Components, a Web Application framework, a Philosophy, and a Community — all working together in harmony. <br><br> Symfony Components is a set of decoupled and reusable components on which the best PHP applications are built, such as Drupal, Prestashop, and Laravel.'
+  button:
+    login : 'Login into your account'
+login:
+  page:
+    introduction: 'Please sign-in to your account'  
+    button: 'Login in'
+  error:
+    fail: Sorry, Login failed.
+register:
+  page:
+    introduction: 'New User! Create a new account'  
+    button: 'Create Account'
+user:
+  form:
+    first_name: 
+      label: 'FIRST NAME'
+      placeholder: 'First Name'    
+    middle_name: 
+      label: 'MIDDLE NAME'
+      placeholder: 'Middle Name'
+    last_name: 
+      label: 'LAST NAME'
+      placeholder: 'Last Name'
+    phone: 
+      label: 'PHONE NUMBER'
+      placeholder: 'Phone Number'
+    email: 
+      label: 'EMAIL ADDRESS'
+      placeholder: 'Enter your email'
+    street: 
+      label: 'STREET'
+      placeholder: 'Street'
+    house_number: 
+      label: 'HOUSE NUMBER'
+      placeholder: 'House Number'
+    postal_code: 
+      label: 'POSTAL CODE'
+      placeholder: 'Postal Code'
+    city: 
+      label: 'CITY'
+      placeholder: 'City'
+    password: 
+      label: 'PASSWORD'
+      placeholder: '***********'
+    confirm_password: 
+      label: 'CONFIRM PASSWORD'
+      placeholder: '***********'
+    name:
+      label: PERSON NAME
+    address: 
+      label: ADDRESS
+menu_bar:
+  list:
+    home: Dashboard
+    user: Users
+    product: Products
+generic:
+  button:
+    login: Login in
+    register: Create Account
+    submit: Submit
+    cancel: Cancel
+dashboard:
+  page:
+    introduction: 'This is the symfony application for user management. Here you will get overview of all the users and product details.'
+product:
+  form:
+    name: 
+      label: 'PRODUCT NAME'
+      placeholder: 'Product Name'    
+    description: 
+      label: 'DESCRIPTION'
+      placeholder: 'Description'
+    price: 
+      label: 'PRICE'
+      placeholder: 'Price'
+    category: 
+      label: 'CATEGORY'
+  

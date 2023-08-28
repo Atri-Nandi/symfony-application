@@ -1,0 +1,43 @@
+{% extends "base/base.html.twig" %}
+
+{% block body %}
+   {{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
+   {{ form_errors(form) }}
+      <div class="container-xxl">
+         <div class="authentication-wrapper authentication-basic container-p-y">
+         <div class="authentication-inner">
+            <!-- Register -->
+            <div class="card">
+               <div class="card-body">
+               <!-- Logo -->
+               <div class="app-brand justify-content-center">
+                  <a href="{{website|default('/')}}" class="app-brand-link gap-2">
+                     <span class="app-brand-logo demo">
+                        <img src="{{ asset('img/logo.jpg')}}" width="30px" height="40px"/>
+                     </span>
+                     <span class="app-brand-text demo text-body fw-bolder">{{ 'home.page.title'|trans|raw }}</span>
+                  </a>
+               </div>
+               <!-- /Logo -->
+               <p class="mb-4">{{ 'login.page.introduction'|trans|raw }}</p>
+                  <div class="mb-3">
+                     {{ form_row(form.email) }}
+                  </div>
+                  <div class="mb-3 form-password-toggle">
+                     {{ form_row(form.password) }}                     
+                  </div>                  
+                  <div class="mb-3">
+                     {{ form_row(form.login) }} 
+                  </div>
+                  <p class="text-center">
+                     <span>New on our platform?</span>
+                     <a href="{{ path('register')}}"><span>Create an account</span></a>
+                  </p>
+               </div>
+            </div>
+            <!-- /Register -->
+         </div>
+         </div>
+      </div>
+   {{ form_end(form) }}
+{% endblock %}

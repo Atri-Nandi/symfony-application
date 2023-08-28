@@ -1,0 +1,9 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+        environment: "%environment%"
+        website_title: "%website.title%"
+        website_favicon: "%website.favicon%"
+when@test:
+    twig:
+        strict_variables: true

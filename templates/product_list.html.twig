@@ -1,0 +1,90 @@
+{% extends "base/base.html.twig" %}
+{% import "base/menu_bar.html.twig" as menu %}
+
+{% block body %}
+   <!-- Layout wrapper -->
+   <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+
+         <!-- Left menu bar -->
+         {{ menu.writeLeftBar(showUser) }}
+
+        <!-- Layout container -->
+        <div class="layout-page">
+         {{ menu.writeTopBar(user) }}
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4">Product List</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  
+                  {% if productlist|length == 0 %}
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">Product Overview</h5>
+                        <p class="card-text">Here you can add the products.</p>
+                        <a href="{{ path('product') }}" class="btn btn-primary m-5">ADD PRODUCTS</a>
+                      </div>
+                      
+                    </div>
+                  {% else %}
+                  <a href="{{ path('product') }}" class="btn btn-primary mb-4">ADD PRODUCTS</a>
+
+                  <!-- Hoverable Table rows -->
+              <div class="card">
+                <div class="table-responsive text-nowrap">                  
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>{{ 'product.form.name.label'|trans|raw }}</th>
+                        <th>{{ 'product.form.description.label'|trans|raw }}</th>
+                        <th>{{ 'product.form.price.label'|trans|raw }}</th>
+                        <th>{{ 'product.form.category.label'|trans|raw }}</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      {% for product in productlist %}
+                        <tr>
+                          <td><b>{{ product.name }}</b></td>
+                          <td>{{ product.description }}</td>
+                          <td>{{ product.price|format_currency('EUR') }}</td>
+                          <td>{{ product.category }}</td>
+                          <td>
+                            <a class="btn btn-icon btn-primary" href="{{ path('product', {'id': product.id})}}"><i class="bx bx-edit me-1"></i></a>
+                          <a class="btn btn-icon btn-danger" href="{{ path('delete-product', {'id': product.id})}}"><i class="bx bx-trash me-1"></i></a
+                          >
+                            
+                          </td>
+                        </tr>                        
+                      {% endfor %}                      
+                    </tbody>
+                  </table>                 
+                </div>
+              </div>
+              <!--/ Hoverable Table rows -->
+              {% endif %}
+
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+{% endblock %}
