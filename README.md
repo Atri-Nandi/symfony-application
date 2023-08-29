@@ -1,4 +1,4 @@
-# symfony-application
+# Symfony Application
 
 This is a demo application made in Symfony framework.
 This application has admin pages for user and product management. The application pages are protected using login.
