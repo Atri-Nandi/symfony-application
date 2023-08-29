@@ -69,4 +69,11 @@ The admin can also add/manage the users and products.
 
 <img src="https://github.com/Atri-Nandi/symfony-application/assets/143453503/c01e4690-fb1c-47a6-b9ae-2a94fa1bdbc3"  width="800" height="400">
 
+### Dashboard - User
+The user dashboard only shows the products created by the user. It does not show details of all the other users in the system.
+The products can be managed/edited from the products page.
+
+<img src="https://github.com/Atri-Nandi/symfony-application/assets/143453503/4832d1d5-4108-408c-bc2a-394ea82f79ab"  width="800" height="400">
+
+
 
