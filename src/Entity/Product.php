@@ -51,6 +51,8 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @Assert\NotBlank(message = "Please fill the fields", groups={"productVal"})
      */
     private $category;
 
