@@ -76,5 +76,11 @@ The products can be managed/edited from the products page.
 
 <img src="https://github.com/Atri-Nandi/symfony-application/assets/143453503/4832d1d5-4108-408c-bc2a-394ea82f79ab"  width="800" height="400">
 
+### Unit Test
+
+Please use the below command to run php unit test.
+   ```
+   php bin/phpUnit
+   ```
 
 
