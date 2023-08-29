@@ -34,7 +34,7 @@ Admin user can manage the users and product after login.
    php bin/console doctrine:migrations:migrate
    ```
 
-7. To Load Dummy data, we need to run the below command. (17 User, 27 Product)
+7. To Load Dummy data, we need to run the below command. (17 User, 30 Product)
    ```
    php bin/console doctrine:fixtures:load
    ```
