@@ -152,11 +152,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $address;        
     }
 
-    /************************* Validation function **************************/
-
-    
-
-
     /************************* Specific getters/setters **************************/
 
     public function getId(): ?int
