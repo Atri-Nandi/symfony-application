@@ -56,13 +56,6 @@ class Product
      */
     private $category;
 
-    /************************* Public Functions **************************/
-
-    public function __construct()
-    {
-        
-    }
-
     
     /************************* Specific getters/setters **************************/
 
