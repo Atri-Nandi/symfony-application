@@ -1,4 +1,4 @@
-# symfony-application
+# Symfony Application
 
 This is a demo application made in Symfony framework.
 This application has admin pages for user and product management. The application pages are protected using login.
@@ -34,7 +34,8 @@ Admin user can manage the users and product after login.
    php bin/console doctrine:migrations:migrate
    ```
 
-7. To Load Dummy data, we need to run the below command. (17 User, 27 Product)
+7. To Load Dummy data, we need to run the below command (17 User, 30 Product).
+   Please type YES to load the data.
    ```
    php bin/console doctrine:fixtures:load
    ```
@@ -68,5 +69,18 @@ The dashboard shows an overview of all users and products in the application.
 The admin can also add/manage the users and products.
 
 <img src="https://github.com/Atri-Nandi/symfony-application/assets/143453503/c01e4690-fb1c-47a6-b9ae-2a94fa1bdbc3"  width="800" height="400">
+
+### Dashboard - User
+The user dashboard only shows the products created by the user. It does not show details of all the other users in the system.
+The products can be managed/edited from the products page.
+
+<img src="https://github.com/Atri-Nandi/symfony-application/assets/143453503/4832d1d5-4108-408c-bc2a-394ea82f79ab"  width="800" height="400">
+
+### Unit Test
+
+Please use the below command to run php unit test.
+   ```
+   php bin/phpUnit
+   ```
 
 
