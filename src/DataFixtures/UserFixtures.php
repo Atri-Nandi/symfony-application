@@ -9,7 +9,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Faker\Factory;
-use Faker\Generator as FakerGenerator;
 
 class UserFixtures extends Fixture {
 
@@ -85,13 +84,13 @@ class UserFixtures extends Fixture {
     /**
      * This function add product to the application
      * 
-     * @param FakerGenerator $generator Gebnerator object
-     * @param array $category List of categories
+     * @param $generator Generator object
+     * @param array $category Product category
      * @param User $user User object
      * @param ObjectManager $manager Objectmanager
      */
     public function addProduct(
-        FakerGenerator $generator, 
+        $generator, 
         array $category, 
         User $user, 
         ObjectManager $manager

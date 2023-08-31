@@ -108,6 +108,10 @@ class AccountType extends AbstractType
                 'label' => Trans::tr('user.form.city.label'),
                 'attr' => ['class' => 'form-control', 'placeholder' => Trans::tr('user.form.city.placeholder')],                
             ])
+            ->add('country', TextType::class, [
+                'label' => Trans::tr('user.form.country.label'),
+                'attr' => ['class' => 'form-control', 'placeholder' => Trans::tr('user.form.country.placeholder')],                
+            ])
             ->add('submit', SubmitType::class, [
                 'label' => Trans::tr('generic.button.submit'),
                 'attr' => ['class' => 'btn btn-primary me-2'],                
